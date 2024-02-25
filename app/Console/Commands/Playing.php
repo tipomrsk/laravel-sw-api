@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\SWAPI\Entities\Person;
 use App\Services\SWAPI\SwapiService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
@@ -34,7 +35,15 @@ class Playing extends Command
             ->people()
             ->get();
 
-        dd($return);
+        /** @var Person $person */
+        $person = $return->first();
+
+        dump($person->starships);
+
+        foreach ($return as $person) {
+            dump($person->name);
+        }
+
 
     }
 }

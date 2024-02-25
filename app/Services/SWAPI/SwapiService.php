@@ -6,6 +6,11 @@ use App\Services\SWAPI\Endpoints\HasPeople;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
+
+/**
+ * SWAPI Service
+ * https://swapi.dev/
+ */
 class SwapiService
 {
 

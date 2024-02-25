@@ -26,6 +26,5 @@ class People
     {
         return collect($json['results'])
         ->map(fn ($person) => new Person($person));
-
     }
 }
