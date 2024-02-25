@@ -33,17 +33,12 @@ class Playing extends Command
 
         $return = $service
             ->people()
-            ->get();
+            ->getById(2);
 
         /** @var Person $person */
         $person = $return->first();
 
-        dump($person->starships);
-
-        foreach ($return as $person) {
-            dump($person->name);
-        }
-
+        dump($person->films);
 
     }
 }
