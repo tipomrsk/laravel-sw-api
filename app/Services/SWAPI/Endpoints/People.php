@@ -19,14 +19,6 @@ class People extends RootEndpoint
 
     public function getById(int $id): Collection
     {
-
-        /**
-         * $this->service->api->get("/people/{$id}")
-         * get first position of the array
-         */
-
-
-
         return $this->transform(
             [$this->service->api->get("/people/{$id}")->json()],
             Person::class
