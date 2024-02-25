@@ -18,13 +18,13 @@ class People
     public function get(): Collection
     {
         return $this->transform(
-            $this->service->api->get('/people')
+            $this->service->api->get('/people')->json('results')
         );
     }
 
     private function transform(mixed $json): Collection
     {
-        return collect($json['results'])
+        return collect($json)
         ->map(fn ($person) => new Person($person));
     }
 }
