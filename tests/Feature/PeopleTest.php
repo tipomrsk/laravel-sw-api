@@ -13,3 +13,13 @@ it('get method from HasPeople trait', function () {
         ->and($people->first())       ->toBeInstanceOf(Person::class)
         ->and($people->first()->name) ->toBe('Luke Skywalker');
 });
+
+it('getById method from HasPeople trait', function () {
+
+    $people = Swapi::people()->getById(1);
+
+    expect($people)
+        ->toBeInstanceOf(Collection::class)
+        ->and($people->first())       ->toBeInstanceOf(Person::class)
+        ->and($people->first()->name) ->toBe('Luke Skywalker');
+});
